@@ -289,3 +289,9 @@ The *path* is what you see in the address bar (i.e. everthing in URL after the
 The combination of a VERB + PATH make a *ROUTE*. These little blocks we've been
 writing in Sinatra are *routes*. I like to think of them as `features` or
 `things my web app can do`.
+
+## Exercise: 99 Bottles of Beer
+
+[Exercise Repo](https://github.com/ga-dc/99_bottles_of_beer)
+
+# [Next: Views](views.md)
