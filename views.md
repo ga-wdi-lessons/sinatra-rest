@@ -1,5 +1,13 @@
 # Sinatra Views
 
+## Learning Objectives
+
+- Describe the role of templating languages in a server-side web app
+- Use ERB in sinatra to render views
+- Use ERB tags to include ruby code in HTML templates
+- Describe the difference between `<%= %>` and `<% %>`
+- Create instance variables to share data from the controller to the view
+
 ## We do: Sinatra Views
 
 Convert 99 bottles ex. to use views.
@@ -137,7 +145,16 @@ global layout view which will be loaded "around" every other view.
 </html>
 ```
 
-## We do: Forms
+## You do: Pair Programming Bot
+
+https://github.com/ga-dc/pair_programming_bot
+
+## You do: Emergency Complement
+
+https://github.com/ga-dc/emergency_compliment
+
+
+<!-- ## We do: Forms
 
 
 Any input with a `name` attribute will show up as an element of `params`
@@ -159,14 +176,4 @@ parameter values from the input tags.
 but a limitation on HTML. We will see tomorrow during the lab theres a way to
 kind of hack around these HTML limitations.
 
-**Question**: What's the benefit of using GET requests with search forms?
-
-#[Next: Sinatra REST](rest.md)
-
-## You do: Pair Programming Bot
-
-https://github.com/ga-dc/pair_programming_bot
-
-## You do: Emergency Complement
-
-https://github.com/ga-dc/emergency_compliment
+**Question**: What's the benefit of using GET requests with search forms? -->

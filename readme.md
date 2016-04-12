@@ -12,16 +12,9 @@
 
 Parts
 
-* [intro to sinatra and params](intro-and-params.md)
-* [views](views.md)
-* [intro to sinatra and params](intro-and-params.md)
-
-## Learning Objectives
-
-- Explain what REST is and why we use it
-- Use erb to create reusable views and templates
-- Use a global template - layout.erb
-
+* [Intro to Sinatra and Params](intro-and-params.md)
+* [Views](views.md)
+* [RESTful Routes](rest.md)
 
 ### Sample Quiz Questions
 

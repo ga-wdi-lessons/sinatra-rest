@@ -224,10 +224,13 @@ the `localhost:4567` part):
 > What's up with that `%20`? We can't have spaces in URLs, so we have to
 *encode* them.
 
-How can we do this in sinatra?
-
+How can we do this in sinatra? Using Named Parameters.
 
 ### Named Parameters in the Route
+
+Name parameters are like placeholders in our route. Any info in that part of the
+URL will get stored (automatically by Sinatra) in the params hash for *that
+particular request*.
 
 Let's add the following example to our app:
 
@@ -252,6 +255,9 @@ Try creating a new route that doubles a number. When I go to:
 * `/double/8`
   * I should see: `16`
 
+Hint: you may need to convert a value from params to an integer using `to_i` for
+multiplication to work.
+
 ### Mini-exercise: Magic Eight Ball
 
 Try to do the Magic Eight Ball challenge from the
@@ -268,6 +274,18 @@ get '/fancy_hi/:firstname/:lastname' do
   "Hi! Your name is #{params[:lastname]}. #{params[:firstname]} #{params[:lastname]}"
 end
 ```
+
+
+It's less common, but you can put params placeholders *around* fixed sections of
+the route:
+
+```ruby
+get '/:firstname/another_fancy_hi/:lastname' do
+  "Hi! Your name is #{params[:lastname]}. #{params[:firstname]} #{params[:lastname]}"
+end
+```
+
+Add these routes and test them by visiting the correct URLs to trigger them.
 
 ### Routes vs Paths
 
