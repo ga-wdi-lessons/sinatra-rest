@@ -178,9 +178,20 @@ functionalities is `sinatra/reloader`, which detects every time you save your
 `app.rb` file and restarts the server so that it uses the newest version of the
 file.
 
-`bundle install`, and require sinatra's reloader in your `app.rb`:
+Then run:
+
+```
+$ bundle install
+```
 
 This should create a `Gemfile.lock`, which you don't need to touch.
+
+Finally, require sinatra's reloader in your `app.rb`, after requiring sinatra:
+
+```ruby
+require 'sinatra/reloader'
+```
+
 
 
 ## Exercise: Sinatra Games (15 miuntes)
