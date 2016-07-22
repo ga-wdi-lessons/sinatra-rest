@@ -48,6 +48,8 @@ Other ways include Rails, Express / Node.js, Django, PHP, etc.
 
 Let's check out some examples of [Sinatra in the wild.](http://www.sinatrarb.com/wild.html)
 
+Sinatra isn't nearly as prevalent a Ruby framework as Rails, but has a use case when building smaller scale apps because it's minimalistic and lightweight as opposed to the "heaviness" of Rails, which is more apt for a larger production site. 
+
 But what do we mean by *web application*?
 
 ### What are Web Apps?
