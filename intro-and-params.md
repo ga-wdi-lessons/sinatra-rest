@@ -42,10 +42,11 @@ Well, maybe not that Sinatra...
 
 ## What is Sinatra?
 
-Sinatra  is a **framework** for quickly creating web applications in Ruby with
-minimal effort.
+Sinatra  is a **framework** for quickly creating web applications in Ruby with minimal effort.
 
 Other ways include Rails, Express / Node.js, Django, PHP, etc.
+
+Let's check out some examples of  ![Sinatra in the wild.](http://www.sinatrarb.com/wild.html)
 
 But what do we mean by *web application*?
 
@@ -184,7 +185,7 @@ Then run:
 $ bundle install
 ```
 
-This should create a `Gemfile.lock`, which you don't need to touch.
+This should create a `Gemfile.lock`, which you don't need to touch. This file shows the exact versions of the gems you installed so that when your app is loaded on another machine, the same versions will be installed when you run `bundle install`.
 
 Finally, require sinatra's reloader in your `app.rb`, after requiring sinatra:
 
@@ -194,7 +195,7 @@ require 'sinatra/reloader'
 
 
 
-## Exercise: Sinatra Games (15 miuntes)
+## Exercise: Sinatra Games (15 minutes)
 
 Check out the [Sinatra Games](https://github.com/ga-wdi-exercises/sinatra_games) repo. Try to do as many of these games as you can!
 
