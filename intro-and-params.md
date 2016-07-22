@@ -46,7 +46,7 @@ Sinatra  is a **framework** for quickly creating web applications in Ruby with m
 
 Other ways include Rails, Express / Node.js, Django, PHP, etc.
 
-Let's check out some examples of  ![Sinatra in the wild.](http://www.sinatrarb.com/wild.html)
+Let's check out some examples of [Sinatra in the wild.](http://www.sinatrarb.com/wild.html)
 
 But what do we mean by *web application*?
 
