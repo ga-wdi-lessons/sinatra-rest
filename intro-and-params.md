@@ -48,7 +48,7 @@ Other ways include Rails, Express / Node.js, Django, PHP, etc.
 
 Let's check out some examples of [Sinatra in the wild.](http://www.sinatrarb.com/wild.html)
 
-Sinatra isn't nearly as prevalent a Ruby framework as Rails, but has a use case when building smaller scale apps because it's minimalistic and lightweight as opposed to the "heaviness" of Rails, which is more apt for a larger production site. 
+Sinatra isn't nearly as prevalent a Ruby framework as Rails, but has a use case when building smaller scale apps because it's minimalistic and lightweight as opposed to the "heaviness" of Rails, which is more apt for a larger production site.
 
 But what do we mean by *web application*?
 
@@ -151,7 +151,7 @@ You should get a page saying "Sinatra doesn't know this ditty." That's Sinatra's
 404 page. It's saying, "I don't know what to do when someone goes to
 `/oh_hello`".
 
-### Mini-Exercise: Add another route
+### Mini-Exercise: Add another route (5 minutes)
 
 Add a second `route`, such that when the user visits `/oh_hello`, they see a
 page that says: "You just got pranked! That's entirely too much tuna!"
@@ -260,7 +260,7 @@ What does this tell us? **Params is a hash!**. The *keys* are the placeholders
 we define in our routes, and the values are the values users include in their
 URLs.
 
-### Mini-exercise: Another route w/ Params!
+### Mini-exercise: Another route w/ Params! (5 minutes)
 
 Try creating a new route that doubles a number. When I go to:
 
@@ -272,7 +272,7 @@ Try creating a new route that doubles a number. When I go to:
 Hint: you may need to convert a value from params to an integer using `to_i` for
 multiplication to work.
 
-### Mini-exercise: Magic Eight Ball
+### Mini-exercise: Magic Eight Ball (5 minutes)
 
 Try to do the Magic Eight Ball challenge from the
 [sinatra games](https://github.com/ga-wdi-exercises/sinatra_games) exercise.
@@ -322,8 +322,10 @@ The combination of a VERB + PATH make a *ROUTE*. These little blocks we've been
 writing in Sinatra are *routes*. I like to think of them as `features` or
 `things my web app can do`.
 
-## Exercise: 99 Bottles of Beer
+## Exercise: 99 Bottles of Beer (15 minutes)
 
 [Exercise Repo](https://github.com/ga-dc/99_bottles_of_beer)
+
+## BREAK (10 minutes)
 
 # [Next: Views](views.md)
