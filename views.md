@@ -13,7 +13,7 @@
 Convert 99 bottles ex. to use views.
 
 Let's convert the hardcoded strings in our application to take advantage of
-Sinatra's built-in templating engine: erb.
+Sinatra's built-in templating engine: erb. That is, erb is the templating format Sinatra uses to generate HTML.
 
 Create a directory called `views` and a file in that folder called `index.erb`
 
@@ -41,7 +41,7 @@ To share variables from the application with the view, define instance variables
 ```ruby
 require 'sinatra'
 get '/:num_bottles' do
-  @num_bottles = params[:num_bottles]
+  @num_bottles = params[:num_bottles].to_i
   @next = @num_bottles -= 1
   erb :index
 end
@@ -145,11 +145,11 @@ global layout view which will be loaded "around" every other view.
 </html>
 ```
 
-## You do: Pair Programming Bot
+## You do: Pair Programming Bot (20 minutes)
 
 https://github.com/ga-dc/pair_programming_bot
 
-## You do: Emergency Complement
+## You do: Emergency Complement (20 minutes)
 
 https://github.com/ga-dc/emergency_compliment
 
