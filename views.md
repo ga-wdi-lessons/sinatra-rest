@@ -13,7 +13,7 @@
 Convert 99 bottles ex. to use views.
 
 Let's convert the hardcoded strings in our application to take advantage of
-Sinatra's built-in templating engine: erb.
+Sinatra's built-in templating engine: erb. That is, erb is the templating format Sinatra uses to generate HTML.
 
 Create a directory called `views` and a file in that folder called `index.erb`
 
@@ -41,7 +41,7 @@ To share variables from the application with the view, define instance variables
 ```ruby
 require 'sinatra'
 get '/:num_bottles' do
-  @num_bottles = params[:num_bottles]
+  @num_bottles = params[:num_bottles].to_i
   @next = @num_bottles -= 1
   erb :index
 end
@@ -82,7 +82,7 @@ In `index.erb`
 
 > One thing to note about instance variables (`@some_variable`). If we
 instantiate an instance variable in one of our routes, we can only use it in
-that route and cooresponding view. Other routes won't be able to utilize it.
+that route and corresponding view. Other routes won't be able to utilize it.
 
 ### More complex ruby with erb
 
@@ -129,6 +129,8 @@ and link to it with
 <link rel="stylesheet" type="text/css" href="/css/styles.css">
 ```
 
+It's important to note here that we don't include the 'public' folder in the 'href' path. This is Sinatra convention. The styles won't apply if you do include 'public' in the path.
+
 Instead of copying and pasting this link to each of the views, we can use a
 global layout view which will be loaded "around" every other view.
 
@@ -145,11 +147,11 @@ global layout view which will be loaded "around" every other view.
 </html>
 ```
 
-## You do: Pair Programming Bot
+## You do: Pair Programming Bot (20 minutes)
 
 https://github.com/ga-dc/pair_programming_bot
 
-## You do: Emergency Complement
+## You do: Emergency Complement (20 minutes)
 
 https://github.com/ga-dc/emergency_compliment
 

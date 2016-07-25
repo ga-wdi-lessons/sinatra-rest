@@ -62,7 +62,7 @@ profile you're probably making a PUT or PATCH request. The difference is PUT
 would be intended to completely replace your profile, whereas PATCH would be
 intended to just change a few fields of your profile.
 
-PUT rewrites data; PATCH just changes parts of data.
+PUT rewrites data; PATCH just changes parts of data. To clarify further, PATCH is replacing part of the data and PUT is replacing the whole thing.
 
 ### What's the difference at a technical level between a GET and a POST request?
 
@@ -224,7 +224,7 @@ end
 
 ...and go to `localhost:4567/?first_name=James&last_name=Bond`.
 
-### You Do: Make the above statement show up in an ERB view!
+### You Do: Make the above statement show up in an ERB view! (5 minutes)
 
 # Forms
 
@@ -236,9 +236,9 @@ Copy and paste this code into your ERB:
 
 ```html
 <form method="get" action=".">
-  <input type="text" name="first_name" placeholder="First name" />
-  <input type="text" name="last_name" placeholder="Last name" />
-  <input type="submit" value="Submit" />
+  <input type="text" name="first_name" placeholder="First name" >
+  <input type="text" name="last_name" placeholder="Last name" >
+  <input type="submit" value="Submit" >
 </form>
 ```
 
@@ -255,6 +255,8 @@ parameters: with `params`.
   <input type="submit" value="Submit" />
 </form>
 ```
+> What's important to keep in mind with forms is that we need to make sure what method we're using--forms can only post and get-- and where we're submitting the request--the action.
+
 
 ### You do: Make the first and last names show up in the form using `@variables` instead.
 
@@ -282,15 +284,32 @@ end
 
 Forms with a POST action are used for creating new things.
 
-Add this to `index.erb`:
+First let's make a new route in out `app.rb`:
 
-```html
-<form method='post' action='/names'>
-  <input type='text' name='student_name'>
-  <input type='submit'>
-</form>
+```rb
+get '/names' do
+  @names = names
+  erb :names
+end
+```
+Let's add a `names` array too:
+
+```rb
+names = ["winston", "nelly", "rasheeda"]
 ```
 
+Create a `names.erb` and add this:
+
+```html
+<% @names.each do |name| %>
+  <h3><%= name %></h3>
+<% end %>
+
+<form action="/names" method = 'post'>
+  <input type="text" name='student_name'>
+  <input type="submit">
+</form>
+```
 Let's try submitting this form. OH NOES. Sinatra doesn't know this diddy.
 
 > Note that when we change whats in the action in the form. The diddy sinatra
@@ -314,13 +333,13 @@ end
 
 Let's try submitting again. What happened? Hmm, seems like whatever we type in
 gets rendered. Instead of that, I think it'd be really helpful if we just
-redirected to our names route after we push the name to the array.
+redirected to our names route after we push the name to the array. Redirect is making a new get request and puts us in a new response request cycle.
 
 Update `app.rb`:
 
 ```ruby
 post '/names' do
-  names << params[:student_name]
+  names.push(params[:student_name])
   redirect "names"
 end
 ```
@@ -351,8 +370,6 @@ ActiveRecord to actually do so.
 This all seems like a lot of trouble for a few routes. Why not just use GET
 requests, which are nice and simple, and just have paths like `/read`,
 `/update`, `/delete`, and so on?
-
-#### What would be the problem with having a GET route delete stuff?
 
 ### You do: [Play with HTML forms](https://github.com/ga-dc/html-forms-practice)
 
