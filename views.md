@@ -82,7 +82,7 @@ In `index.erb`
 
 > One thing to note about instance variables (`@some_variable`). If we
 instantiate an instance variable in one of our routes, we can only use it in
-that route and cooresponding view. Other routes won't be able to utilize it.
+that route and corresponding view. Other routes won't be able to utilize it.
 
 ### More complex ruby with erb
 
@@ -128,6 +128,8 @@ and link to it with
 ```html
 <link rel="stylesheet" type="text/css" href="/css/styles.css">
 ```
+
+It's important to note here that we don't include the 'public' folder in the 'href' path. This is Sinatra convention. The styles won't apply if you do include 'public' in the path.
 
 Instead of copying and pasting this link to each of the views, we can use a
 global layout view which will be loaded "around" every other view.
