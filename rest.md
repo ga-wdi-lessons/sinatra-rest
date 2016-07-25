@@ -362,14 +362,4 @@ So what about the other REST methods?
 
 HTML forms **can't actually put, patch, or delete**. They can only GET and POST.
 
-We can do those in Ruby and in Javascript. But for now, we're going to use Terminal.
-
-```
-$ curl -X GET "localhost:4567" -d "first_name=Steve&last_name=Jobs"
-$ curl -X POST "localhost:4567" -d "first_name=Steve&last_name=Jobs"
-$ curl -X PUT "localhost:4567" -d "first_name=Steve&last_name=Jobs"
-$ curl -X PATCH "localhost:4567" -d "first_name=Steve&last_name=Jobs"
-$ curl -X DELETE "localhost:4567" -d "first_name=Steve&last_name=Jobs"
-```
-
-#### You do: Make a route for each of the 5 REST methods that tells the user simply, "You did a GET" or "You did a PATCH".
+We can do those in Ruby and in Javascript, which we'll cover later.
