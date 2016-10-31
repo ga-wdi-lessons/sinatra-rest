@@ -284,7 +284,7 @@ end
 
 Forms with a POST action are used for creating new things.
 
-First let's make a new route in out `app.rb`:
+First let's make a new route in our `app.rb`:
 
 ```rb
 get '/names' do
