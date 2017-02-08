@@ -7,16 +7,16 @@
 - List the HTTP request verbs
 - Distinguish between a route and a path
 - Define routes with URL parameters and access those parameters
-- Access data from the params hash in sinatra
+- Access data from the params hash in Sinatra
 
 
 ## Intro (10 minutes)
 
 In unit 1, we learned all about HTML/CSS/JS, and the web. It was awesome, we got
-to spend our time building sweet apps and games like War, Concentration, etc.
+to spend our time building sweet apps and games like Hangman, Tower of Hanoi, etc.
 
 In this most recent unit, we learned about Ruby, an awesome language that can
-run outside the browser, and makes it easy to save data to a DB and write our
+run outside the browser, makes it easy to save data to a DB and write our
 programs using OOP.
 
 But you probably noticed that we've been stuck writing boring CLI apps that
@@ -112,7 +112,7 @@ end
 
 We'll talk about what `get` means later on.
 
-Now, in your console, run the file the way you'd run any Ruby file:
+Now, in your terminal, run the file the way you'd run any Ruby file:
 
 ```sh
 $ ruby app.rb
@@ -138,7 +138,7 @@ can respond to requests, just like any other server. To test that out, go to
 ### Where does that `4567` come from?
 
 This is the **port number** of the server we're using. Don't worry about it too
-much -- just know that to access a Sinatra app on your computer you'll always
+much — just know that to access a Sinatra app on your computer you'll always
 use `localhost:4567`, unless someone changes it.
 
 ## Routes
@@ -157,9 +157,7 @@ You should get a page saying "Sinatra doesn't know this ditty." That's Sinatra's
 Add a second `route`, such that when the user visits `/oh_hello`, they see a
 page that says: "You just got pranked! That's entirely too much tuna!"
 
-![Too much tuna!](https://45.media.tumblr.com/1cf4c52877278785e86499c4895b9816/tumblr_n1zzoeYvH41qzhbquo7_500.gif)
-
-Bonus: Make the page include an image tag with a tuna sandwich.
+**Bonus** Make the page include an image tag with a tuna sandwich.
 
 Don't forget to restart your server to test your work!
 
@@ -190,43 +188,40 @@ $ bundle install
 
 This should create a `Gemfile.lock`, which you don't need to touch. This file shows the exact versions of the gems you installed so that when your app is loaded on another machine, the same versions will be installed when you run `bundle install`.
 
-Finally, require sinatra's reloader in your `app.rb`, after requiring sinatra:
+Finally, require Sinatra's reloader isn your `app.rb`, after requiring inatra:
 
 ```ruby
 require 'sinatra/reloader'
 ```
 
-
-
 ## Exercise: Sinatra Games (15 minutes)
 
-Check out the [Sinatra Games](https://github.com/ga-wdi-exercises/sinatra_games) repo. Try to do as many of these games as you can!
+Check out the [Sinatra Games](https://github.com/ga-wdi-exercises/sinatra_games) repo.
 
-Note: You can use your current sinatra app you've been working in... no need to
+**Stop at Magic 8 ball**
+
+Note: You can use your current Sinatra app you've been working in... no need to
 create a new one.
 
-Hint: Look up the `Array#sample` method for ones that invove randomness!
+**Hint** Look up the `Array#sample` method for ones that involve randomness.
 
 Some of them are going to be hard / you don't know enough yet... that's ok... see what you can figure out!
-
-Hint: search [the Sinatra documentation](https://github.com/sinatra/sinatra#routes) near the top for `named parameters` for some clues on how to do the the magic 8 ball one.
 
 ## Getting User Input - The Params Hash
 
 ### Demo - `gets.chomp`
 
-So it's clear that `gets.chomp` is no way for us to get input from our users.
+It's clear that `gets.chomp` is no way for us to get input from our users.
 
 Instead, we have basically two options on the web:
 
 1. Info from the URL.
 2. Info from a submitted form.
 
-Today we're just going to look at option 1. We'll cover option 2 in the forms
-lesson.
+Today we're just going to look at option 1.
 
-What does it mean to get info from the URL? Here are some examples (I'm omitting
-the `localhost:4567` part):
+What does it mean to get info from the URL? Here are some examples -- omitting
+the `localhost:4567` part:
 
 * `/artists/4/songs`
 * `/say_hello/adam`
@@ -239,12 +234,12 @@ the `localhost:4567` part):
 > What's up with that `%20`? We can't have spaces in URLs, so we have to
 *encode* them.
 
-How can we do this in sinatra? Using Named Parameters.
+How can we do this in Sinatra? Using named parameters.
 
 ### Named Parameters in the Route
 
-Name parameters are like placeholders in our route. Any info in that part of the
-URL will get stored (automatically by Sinatra) in the params hash for *that
+Named parameters are like placeholders in our route. Any info in that part of the
+URL will get stored — automatically by Sinatra — in the params hash for *that
 particular request*.
 
 Let's add the following example to our app:
@@ -270,14 +265,12 @@ Try creating a new route that doubles a number. When I go to:
 * `/double/8`
   * I should see: `16`
 
-Hint: you may need to convert a value from params to an integer using `to_i` for
+**Hint** you may need to convert a value from params to an integer using `to_i` for
 multiplication to work.
 
 ### Mini-exercise: Magic Eight Ball (5 minutes)
 
-Try to do the Magic Eight Ball challenge from the
-[sinatra games](https://github.com/ga-wdi-exercises/sinatra_games) exercise.
-
+ Complete the last challenge [in the Sinatra Games exercise](https://github.com/ga-wdi-exercises/sinatra_games).
 
 ### Multiple Params
 
@@ -289,7 +282,6 @@ get '/fancy_hi/:firstname/:lastname' do
   "Hi! Your name is #{params[:lastname]}. #{params[:firstname]} #{params[:lastname]}"
 end
 ```
-
 
 It's less common, but you can put params placeholders *around* fixed sections of
 the route:
@@ -306,7 +298,7 @@ Add these routes and test them by visiting the correct URLs to trigger them.
 
 Some terminology:
 
-There are two parts to every HTTP request that sinatra (and basically any web
+There are two parts to every HTTP request that Sinatra (and basically any web
 framework) cares about: the *VERB* and the *PATH*.
 
 You can't really 'see' the verb. It's usually GET, but not always. It could be:
@@ -320,8 +312,8 @@ The *path* is what you see in the address bar (i.e. everthing in URL after the
   first `/`).
 
 The combination of a VERB + PATH make a *ROUTE*. These little blocks we've been
-writing in Sinatra are *routes*. I like to think of them as `features` or
-`things my web app can do`.
+writing in Sinatra are *routes*. Think of them as `features` or
+`things a web app can do`.
 
 ## Exercise: 99 Bottles of Beer (15 minutes)
 

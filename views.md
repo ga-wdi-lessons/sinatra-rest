@@ -3,14 +3,14 @@
 ## Learning Objectives
 
 - Describe the role of templating languages in a server-side web app
-- Use ERB in sinatra to render views
-- Use ERB tags to include ruby code in HTML templates
+- Use erb in Sinatra to render views
+- Use erb tags to include Ruby code in HTML templates
 - Describe the difference between `<%= %>` and `<% %>`
 - Create instance variables to share data from the controller to the view
 
 ## We do: Sinatra Views
 
-Convert 99 bottles ex. to use views.
+Convert the 99 bottles exercise to use views.
 
 Let's convert the hardcoded strings in our application to take advantage of
 Sinatra's built-in templating engine: erb. That is, erb is the templating format Sinatra uses to generate HTML.
@@ -58,8 +58,8 @@ with `@`.
 
 
 We can write erb tags in two ways. `<% %>` or `<%= %>`. Without the equal sign,
-the view (`.erb` file) will execute the code only. With an equal sign, the view
-will execute the code and also place a string that is the return value of the
+the view (`.erb` file) will **execute the code only.** With an equal sign, the view
+will execute the code and also render a string in the browser that is the return value of the
 code that was executed.
 
 To see this in action let's update our `app.rb`:
@@ -84,9 +84,9 @@ In `index.erb`
 instantiate an instance variable in one of our routes, we can only use it in
 that route and corresponding view. Other routes won't be able to utilize it.
 
-### More complex ruby with erb
+### More complex Ruby with erb
 
-If you have a collection to loop through, like an array or a hash, you use
+If you have a collection to loop through, such as an array or a hash, you use
 a slightly different syntax:
 
 Let's add the following content to `app.rb`:
@@ -100,7 +100,7 @@ get '/' do
 end
 ```
 
-If we wanted to have all of the names in `<p></p>` tags we could do something
+If we wanted to have all of the names in `<p></p>` tags, we could do something
 like this in our `index.erb`
 
 ```html
@@ -110,20 +110,18 @@ like this in our `index.erb`
 <% end %>
 ```
 
-> As we delve deeper into back end development. The neccessity to iterate
-through data sets like in the above code snippet becomes extremely important.
-Instead of names, we might loop through nfl players. And instead of `name` it
+> As we delve deeper into backend development. The neccessity to iterate
+through data sets — like in the above code snippet — becomes extremely important.
+Instead of names, we might loop through NFL players. Instead of `name`, it
 might look like `player.name`. Depending on the object representing players, it
 might have multiple different properties like `total_yards`, our
 `touchdowns_this_season`
 
 ## Assets & Sinatra Layouts
 
-Any files in the `public` folder will be served as static assets
+Any files in the `public` folder will be served as static assets.
 
-For example, you would create a file `public/css/styles.css`
-
-and link to it with
+For example, you would create a file `public/css/styles.css` and link to it with
 
 ```html
 <link rel="stylesheet" type="text/css" href="/css/styles.css">
@@ -132,7 +130,7 @@ and link to it with
 It's important to note here that we don't include the 'public' folder in the 'href' path. This is Sinatra convention. The styles won't apply if you do include 'public' in the path.
 
 Instead of copying and pasting this link to each of the views, we can use a
-global layout view which will be loaded "around" every other view.
+global layout view. This will be loaded "around" every other view.
 
 ```html
 <!-- views/layout.erb -->
