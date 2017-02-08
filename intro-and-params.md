@@ -42,7 +42,8 @@ Well, maybe not that Sinatra...
 
 ## What is Sinatra?
 
-Sinatra  is a **framework** for quickly creating web applications in Ruby with minimal effort.
+Sinatra  is a **framework** for quickly creating web applications in Ruby with minimal effort.!  [Frameworks](http://www.infoworld.com/article/2902242/application-development/7-reasons-why-frameworks-are-the-new-programming-languages.html)are similar to libraries, but mainly serve to provide a general structure for your codebase.
+
 
 Other ways include Rails, Express / Node.js, Django, PHP, etc.
 
@@ -61,10 +62,10 @@ it from their browsers). Requests could be something like:
 * show me more info about the artist named 'Drake'
 * here's my information, please register me as a user
 * show me all tenants in the apartment at '123 Walnut Dr.'
-* place the tenant 'Andy Kim' into the apartment at '42 Wallaby Way, Sydney'
+* place the tenant 'Andy Whitley' into the apartment at '42 Wallaby Way, Sydney'
 * turn on the lights in my living room
 
-It then *does something(s)* to *process* that request. That could be:
+It then *does something* to *process* that request. That could be:
 
 * retrieving the data necessary from a database
 * adding info / modifying info in a database
@@ -74,7 +75,7 @@ It then *does something(s)* to *process* that request. That could be:
 Finally, any good web application is going to *respond* to the request. That
 response is almost always going to be an HTML page. Usually, that HTML page
 *isn't* an existing HTML file. Instead, the server uses information it has to
-*build* the page according to a *template* (more on that later).
+*build* the page based on a *template* (more on that later).
 
 
 ## Our first Sinatra app!
@@ -89,7 +90,7 @@ $ touch app.rb
 $ touch Gemfile
 ```
 
-Let's make sure we include our sinatra dependency in the `Gemfile`
+Let's make sure we include our Sinatra dependency in the `Gemfile`
 
 ```ruby
 source 'https://rubygems.org'
