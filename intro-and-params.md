@@ -198,8 +198,6 @@ require 'sinatra/reloader'
 
 Check out the [Sinatra Games](https://github.com/ga-wdi-exercises/sinatra_games) repo.
 
-**Stop at Magic 8 ball**
-
 Note: You can use your current Sinatra app you've been working in... No need to
 create a new one.
 
@@ -267,9 +265,9 @@ Try creating a new route that doubles a number. When I go to:
 **Hint** you may need to convert a value from params to an integer using `to_i` for
 multiplication to work.
 
-### Mini-exercise: Magic Eight Ball (5 minutes)
+### Mini-exercise: Finish Sinatra Games(15 minutes)
 
- Complete the last challenge [in the Sinatra Games exercise](https://github.com/ga-wdi-exercises/sinatra_games).
+ Complete the last two challenges [in the Sinatra Games exercise](https://github.com/ga-wdi-exercises/sinatra_games).
 
 ### Multiple Params
 
