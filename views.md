@@ -87,7 +87,6 @@ In `index.erb`
 <p>This is the instance variable @bob in the initial state: <%= @bob %></p>
 <p>This is executing and returning using erb tags with equal sign: <%= @bob += "(using equals in erb)" %><p>
 <p>This is only executing using erb tags without equal sign: <% @bob += "(not using equals in erb)" %><p>
-<p>Final state of @bob : <%= @bob %>
 
 ```
 
