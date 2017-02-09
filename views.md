@@ -13,7 +13,7 @@
 Convert the 99 bottles exercise to use views.
 
 Let's convert the hardcoded strings in our application to take advantage of
-Sinatra's built-in templating engine: erb. That is, erb is the templating format Sinatra uses to generate HTML.
+Sinatra's built-in templating engine: embedded Ruby (erb). That is, erb is the templating format Sinatra uses to generate HTML.
 
 Create a directory called `views` and a file in that folder called `index.erb`
 

@@ -12,7 +12,7 @@
 
 ## Intro (10 minutes)
 
-In unit 1, we learned all about HTML/CSS/JS, and the web. It was awesome, we got
+In unit 1, we learned all about HTML/CSS/JS, and the web. We got
 to spend our time building sweet apps and games like Hangman, Tower of Hanoi, etc.
 
 In this most recent unit, we learned about Ruby, an awesome language that can
@@ -42,10 +42,10 @@ Well, maybe not that Sinatra...
 
 ## What is Sinatra?
 
-Sinatra  is a **framework** for quickly creating web applications in Ruby with minimal effort.!  [Frameworks](http://www.infoworld.com/article/2902242/application-development/7-reasons-why-frameworks-are-the-new-programming-languages.html)are similar to libraries, but mainly serve to provide a general structure for your codebase.
+Sinatra  is a **framework** for quickly creating web applications in Ruby with minimal effort. [Frameworks](http://www.infoworld.com/article/2902242/application-development/7-reasons-why-frameworks-are-the-new-programming-languages.html) are similar to libraries, but serve to enforce structure for your codebase.
 
 
-Other ways include Rails, Express / Node.js, Django, PHP, etc.
+Other frameworks include Rails, Express / Node.js, Django, PHP, etc.
 
 Let's check out some examples of [Sinatra in the wild.](http://www.sinatrarb.com/wild.html)
 
@@ -188,7 +188,7 @@ $ bundle install
 
 This should create a `Gemfile.lock`, which you don't need to touch. This file shows the exact versions of the gems you installed so that when your app is loaded on another machine, the same versions will be installed when you run `bundle install`.
 
-Finally, require Sinatra's reloader isn your `app.rb`, after requiring inatra:
+Finally, require Sinatra's reloader in your `app.rb`, after requiring Sinatra:
 
 ```ruby
 require 'sinatra/reloader'
@@ -200,7 +200,7 @@ Check out the [Sinatra Games](https://github.com/ga-wdi-exercises/sinatra_games)
 
 **Stop at Magic 8 ball**
 
-Note: You can use your current Sinatra app you've been working in... no need to
+Note: You can use your current Sinatra app you've been working in... No need to
 create a new one.
 
 **Hint** Look up the `Array#sample` method for ones that involve randomness.
@@ -239,7 +239,7 @@ How can we do this in Sinatra? Using named parameters.
 ### Named Parameters in the Route
 
 Named parameters are like placeholders in our route. Any info in that part of the
-URL will get stored — automatically by Sinatra — in the params hash for *that
+URL will get stored automatically by Sinatra in the params hash for *that
 particular request*.
 
 Let's add the following example to our app:
