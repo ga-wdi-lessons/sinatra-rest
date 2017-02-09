@@ -156,7 +156,7 @@ global layout view. This will be loaded "around" every other view.
 </html>
 ```
 
-## You do: Pair Programming Bot (20 minutes)
+## You do: Pair Programming Bot (30 minutes)
 
 https://github.com/ga-dc/pair_programming_bot
 
