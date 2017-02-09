@@ -1,7 +1,7 @@
 # Intro To Sinatra
 
 ## Learning Objectives
-
+- test
 - Describe what Sinatra is and what it is used for
 - Build a Sinatra app that responds to HTTP requests
 - List the HTTP request verbs
