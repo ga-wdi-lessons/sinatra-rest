@@ -10,8 +10,6 @@
 
 ## We do: Sinatra Views
 
-Convert the 99 bottles exercise to use views.
-
 Let's convert the hardcoded strings in our application to take advantage of
 Sinatra's built-in templating engine: embedded Ruby (erb). That is, erb is the templating format Sinatra uses to generate HTML.
 
@@ -35,14 +33,22 @@ This is the home page.
 
 ## Passing Variables to Views
 
+Convert the 99 bottles exercise to use views.
+
 To share variables from the application with the view, define instance variables:
 
 
 ```ruby
 require 'sinatra'
-get '/:num_bottles' do
-  @num_bottles = params[:num_bottles].to_i
-  @next = @num_bottles -= 1
+require 'sinatra/reloader'
+
+get "/" do
+  @num_bottles = 99
+  erb :index
+end
+
+get "/bottles/:num" do
+  @num_bottles = params[:num].to_i
   erb :index
 end
 ```
@@ -52,8 +58,13 @@ with `@`.
 
 ```html
 <!-- /views/index.erb -->
-<%= @num_bottles %> of beer on the wall.
-<a href='/<%= @next %>'>Take one down.</a>
+<% if @num_bottles == 0%>
+  No bottles of beer on the wall.
+  <a href='/'>Start Over</a>
+<% else %>
+  <%= @num_bottles %> bottles of beer on the wall.
+  <a href='/bottles/<%= @num_bottles - 1 %>'>Take one down.</a>
+<% end %>
 ```
 
 
