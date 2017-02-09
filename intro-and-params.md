@@ -166,7 +166,7 @@ Don't forget to restart your server to test your work!
 Fortunately, there's a gem that will automatically restart Sinatra every time a
 change is made to your `app.rb`.
 
-Let's create a Gemfile:
+Let's add more to our Gemfile:
 
 ```ruby
 source 'https://rubygems.org/'
