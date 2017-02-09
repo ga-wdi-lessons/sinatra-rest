@@ -209,11 +209,10 @@ Some of them are going to be hard / you don't know enough yet... that's ok... se
 
 ## Getting User Input - The Params Hash
 
-### Demo - `gets.chomp`
 
-It's clear that `gets.chomp` is no way for us to get input from our users.
+It's clear that `gets.chomp` is no way for us to get input from our users on the web.
 
-Instead, we have basically two options on the web:
+Instead, we have basically two options:
 
 1. Info from the URL.
 2. Info from a submitted form.
