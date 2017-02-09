@@ -157,8 +157,6 @@ You should get a page saying "Sinatra doesn't know this ditty." That's Sinatra's
 Add a second `route`, such that when the user visits `/oh_hello`, they see a
 page that says: "You just got pranked! That's entirely too much tuna!"
 
-**Bonus** Make the page include an image tag with a tuna sandwich.
-
 Don't forget to restart your server to test your work!
 
 ## But I'm getting tired of quitting and restarting!
