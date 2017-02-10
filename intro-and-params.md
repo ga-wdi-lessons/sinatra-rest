@@ -192,7 +192,7 @@ Finally, require Sinatra's reloader in your `app.rb`, after requiring Sinatra:
 require 'sinatra/reloader'
 ```
 
-## Exercise: Sinatra Games (15 minutes)
+## Exercise: Sinatra Games (20 minutes)
 
 Check out the [Sinatra Games](https://github.com/ga-wdi-exercises/sinatra_games) repo.
 
@@ -262,10 +262,6 @@ Try creating a new route that doubles a number. When I go to:
 
 **Hint** you may need to convert a value from params to an integer using `to_i` for
 multiplication to work.
-
-### Mini-exercise: Finish Sinatra Games(15 minutes)
-
- Complete the last two challenges [in the Sinatra Games exercise](https://github.com/ga-wdi-exercises/sinatra_games).
 
 ### Multiple Params
 
