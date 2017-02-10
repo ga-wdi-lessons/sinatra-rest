@@ -306,10 +306,9 @@ The combination of a VERB + PATH make a *ROUTE*. These little blocks we've been
 writing in Sinatra are *routes*. Think of them as `features` or
 `things a web app can do`.
 
-## Exercise: 99 Bottles of Beer (15 minutes)
+## Exercise: 99 Bottles of Beer (20 minutes)
 
 [Exercise Repo](https://github.com/ga-dc/99_bottles_of_beer)
 
-## BREAK (10 minutes)
 
 # [Next: Views](views.md)
