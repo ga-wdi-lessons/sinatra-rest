@@ -106,17 +106,41 @@ Create routes for the following requests. The first one is done for you.
 1. Create a new animal
   - `POST /animals`
 2. Delete an animal
+<details>
+  <summary>Answer</summary>
+  `DELETE /animals/1`
+</details>
 3. Update an existing homework assignment
+<details>
+  <summary>Answer</summary>
+  `PUT /homework/1`
+</details>
 4. Create a new class at GA.
+<details>
+  <summary>Answer</summary>
+  `POST /wdi15`
+</details>
 5. View all students in WDI.
+<details>
+  <summary>Answer</summary>
+  `GET /wdi14`
+</details>
 6. Update the info for an animal with 3 as its id.
+<details>
+  <summary>Answer</summary>
+  `PATCH /animals/3`
+</details>
 7. Update homework submission #32 for assignment #3
+<details>
+  <summary>Answer</summary>
+  `PATCH /homework/32/assignment/3`
+</details>
 
 # BREAK
 
 ## Query Parameters
 
-So far we've done all of our passing-of-dat through the route's path, as path
+So far we've done all of our passing-of-data through the route's path, as path
 parameters. This hasn't been a problem since the data has been tiny -- a user
 ID, or a name.
 
@@ -137,8 +161,7 @@ I'm going to search for "toast". This takes me to a new URL:
 
 https://twitter.com/search?q=toast&src=typd
 
-Check out the stuff at the end of the URL. I'm not sure what `src` means, but I
-do recognize "toast", which is in `q=toast`.
+Check out the stuff at the end of the URL. I've learned that `src` points to the search of the query in this case, I typed it in hence the `typd`. I also recognize "toast", which is in `q=toast`.
 
 If I add `+strudel` to the end of `toast` and go to the new URL...
 
@@ -295,7 +318,7 @@ end
 Let's add a `names` array too:
 
 ```rb
-names = ["winston", "nelly", "rasheeda"]
+names = ["Mario", "Yoshi", "Bowser"]
 ```
 
 Create a `names.erb` and add this:
@@ -310,7 +333,7 @@ Create a `names.erb` and add this:
   <input type="submit">
 </form>
 ```
-Let's try submitting this form. OH NOES. Sinatra doesn't know this diddy.
+Let's try submitting this form. Oh no! Sinatra doesn't know this diddy.
 
 > Note that when we change whats in the action in the form. The diddy sinatra
 doesn't know changes to whatever is in that action form.
@@ -323,7 +346,7 @@ post '/names' do
 end
 ```
 
-Well this isn't very useful, instead i'd like to actually add to our names.
+Well this isn't very useful, instead I'd like to add to our names.
 
 ```ruby
 post '/names' do
@@ -331,9 +354,8 @@ post '/names' do
 end
 ```
 
-Let's try submitting again. What happened? Hmm, seems like whatever we type in
-gets rendered. Instead of that, I think it'd be really helpful if we just
-redirected to our names route after we push the name to the array. Redirect is making a new get request and puts us in a new response request cycle.
+Let's try submitting again. What happened? What we type in
+gets rendered. Instead of that, I think it'd be helpful if we redirected to our names route after pushing a name to the array. Redirect is making a new `GET` request and puts us in a new response request cycle.
 
 Update `app.rb`:
 
@@ -344,28 +366,26 @@ post '/names' do
 end
 ```
 
-> In this situation we are actually redirecting to the get request to names.
-This is traditionally how post requests work. Where some creation functionality
+> In this situation we are redirecting to the `GET` request to the names path.
+This is traditionally how `POST` requests work. Where creation functionality
 happens and then it redirects to a page.
 
 > Another thing you may have figured out by now, is that we could have `names <<
-params[:student_name]` in a get request, why might this be a bad idea? (ST- WG)
-It goes against REST! `GET` requests should only be to access information.
+params[:student_name]` in a `GET` request, why might this be a bad idea? It goes against REST! `GET` requests should only be to access information.
 
-> The difference between GET and POST is that GET sends data as URL parameters,
-while POST sends data in the "body" of the request. This is the difference
+> The difference between `GET` and `POST` is that `GET` sends data as URL parameters,
+while `POST` sends data in the "body" of the request. This is the difference
 between sending a postcard -- all the data is visible to anyone who happens to
-be passing -- and a letter in an envelope -- the data is *not* visible to anyone
-who happens to be passing.
+come into contact with it -- and a letter in an envelope -- the data is *not* visible to everyone who happens to come into contact with it.
 
 #### Why have both?
 
 - For what sorts of things is doing stuff by GET especially nice?
 - For what other sorts of things is doing stuff by POST especially nice?
 
-We've mentioned that POST is usually used to create stuff. Obviously, we're not
+We've mentioned that POST is normally used to create stuff. Obviously, we're not
 actually creating anything yet, but soon we'll be hooking up PSQL and
-ActiveRecord to actually do so.
+ActiveRecord to do that.
 
 This all seems like a lot of trouble for a few routes. Why not just use GET
 requests, which are nice and simple, and just have paths like `/read`,
