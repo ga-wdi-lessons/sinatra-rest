@@ -103,40 +103,40 @@ player's webpage, we can see this same sort of structure in the URL.
 
 Create routes for the following requests. The first one is done for you.
 
-1. Create a new animal
+1. **Create a new animal**
   - `POST /animals`
-2. Delete an animal
+2. **Delete an animal**
 <details>
   <summary>Answer</summary>
   `DELETE /animals/1`
 </details>
-3. Update an existing homework assignment
+3. **Update an existing homework assignment**
 <details>
   <summary>Answer</summary>
   `PUT /homework/1`
 </details>
-4. Create a new class at GA.
+4. **Create a new class at GA.**
 <details>
   <summary>Answer</summary>
   `POST /wdi15`
 </details>
-5. View all students in WDI.
+5. **View all students in WDI.**
 <details>
   <summary>Answer</summary>
   `GET /wdi14`
 </details>
-6. Update the info for an animal with 3 as its id.
+6. **Update the info for an animal with 3 as its id.**
 <details>
   <summary>Answer</summary>
   `PATCH /animals/3`
 </details>
-7. Update homework submission #32 for assignment #3
+7. **Update homework submission #32 for assignment #3**
 <details>
   <summary>Answer</summary>
   `PATCH /homework/32/assignment/3`
 </details>
 
-# BREAK
+## BREAK
 
 ## Query Parameters
 
@@ -155,17 +155,17 @@ parameters.
 
 To demonstrate, let's check out Twitter's search functionality.
 
-https://twitter.com/search
+`https://twitter.com/search`
 
 I'm going to search for "toast". This takes me to a new URL:
 
-https://twitter.com/search?q=toast&src=typd
+`https://twitter.com/search?q=toast&src=typd`
 
 Check out the stuff at the end of the URL. I've learned that `src` points to the search of the query in this case, I typed it in hence the `typd`. I also recognize "toast", which is in `q=toast`.
 
 If I add `+strudel` to the end of `toast` and go to the new URL...
 
-https://twitter.com/search?q=toast+strudel&src=typd
+`https://twitter.com/search?q=toast+strudel&src=typd`
 
 I can see that the search box now has the words "toast" and "strudel", and all
 the displayed Tweets contain those words.
@@ -208,11 +208,11 @@ For example, spaces are replaced either with a plus `+`, or they are
 
 You'll notice that these three links go to the same place:
 
-https://twitter.com/search?q=toast%20strudel&src=typd
+`https://twitter.com/search?q=toast%20strudel&src=typd`
 
-https://twitter.com/search?q=toast+strudel&src=typd
+`https://twitter.com/search?q=toast+strudel&src=typd`
 
-https://twitter.com/search?q=toast strudel&src=typd
+`https://twitter.com/search?q=toast strudel&src=typd`
 
 In fact, in the last one, my browser replaced the space with `%20` itself!
 
