@@ -104,37 +104,43 @@ player's webpage, we can see this same sort of structure in the URL.
 Create routes for the following requests. The first one is done for you.
 
 1. **Create a new animal**
-  - `POST /animals`
+    - `POST /animals`
 2. **Delete an animal**
-<details>
-  <summary>Answer</summary>
-  `DELETE /animals/1`
-</details>
+    <details>
+      <summary>Answer</summary>
+
+      `DELETE /animals/1`
+    </details>
 3. **Update an existing homework assignment**
-<details>
-  <summary>Answer</summary>
-  `PUT /homework/1`
-</details>
+    <details>
+      <summary>Answer</summary>
+
+      `PUT /homework/1`
+    </details>
 4. **Create a new class at GA.**
-<details>
-  <summary>Answer</summary>
-  `POST /wdi15`
-</details>
+    <details>
+      <summary>Answer</summary>
+
+      `POST /wdi15`
+    </details>
 5. **View all students in WDI.**
-<details>
-  <summary>Answer</summary>
-  `GET /wdi14`
-</details>
+    <details>
+      <summary>Answer</summary>
+
+      `GET /wdi14`
+    </details>
 6. **Update the info for an animal with 3 as its id.**
-<details>
-  <summary>Answer</summary>
-  `PATCH /animals/3`
-</details>
+    <details>
+      <summary>Answer</summary>
+
+      `PATCH /animals/3`
+    </details>
 7. **Update homework submission #32 for assignment #3**
-<details>
-  <summary>Answer</summary>
-  `PATCH /homework/32/assignment/3`
-</details>
+    <details>
+      <summary>Answer</summary>
+
+      `PATCH /homework/32/assignment/3`
+    </details>
 
 ## BREAK
 
