@@ -3,8 +3,8 @@
 ## Learning Objectives
 
 - Describe the role of templating languages in a server-side web app
-- Use erb in Sinatra to render views
-- Use erb tags to include Ruby code in HTML templates
+- Use `erb` in Sinatra to render views
+- Use `erb` tags to include Ruby code in HTML templates
 - Describe the difference between `<%= %>` and `<% %>`
 - Create instance variables to share data from the controller to the view
 
@@ -120,7 +120,7 @@ like this in our `index.erb`
 <% end %>
 ```
 
-> As we delve deeper into backend development. The neccessity to iterate
+> As we delve deeper into back-end development, the necessity to iterate
 through data sets — like in the above code snippet — becomes extremely important.
 Instead of names, we might loop through NFL players. Instead of `name`, it
 might look like `player.name`. Depending on the object representing players, it

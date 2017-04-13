@@ -12,11 +12,10 @@
 
 ## Intro (10 minutes)
 
-In unit 1, we learned all about HTML/CSS/JS, and the web. We got
-to spend our time building sweet apps and games like Hangman, Tower of Hanoi, etc.
+In unit 1, we learned all about HTML/CSS/JS, and the web. We built games that ran purely on the front-end (in the browser) like Hangman, Tower of Hanoi, etc.
 
 In this most recent unit, we learned about Ruby, an awesome language that can
-run outside the browser, makes it easy to save data to a DB and write our
+run outside the browser (on a server), that makes it easy to save data to a DB and write our
 programs using OOP.
 
 But you probably noticed that we've been stuck writing boring CLI apps that
@@ -28,8 +27,7 @@ would torture most of our users:
 
 -----
 
-How are we going to put the chocolate of our awesome Ruby skills together with
-the peanut butter of our ninja-like HTML skills?
+How can we combine our Ruby skills with what we learned about HTML, CSS, and JavaScript?
 
 How can we build applications that are backed by *data in a database*, but have
 an interface on the *web*?
@@ -45,7 +43,7 @@ Well, maybe not that Sinatra...
 Sinatra  is a **framework** for quickly creating web applications in Ruby with minimal effort. [Frameworks](http://www.infoworld.com/article/2902242/application-development/7-reasons-why-frameworks-are-the-new-programming-languages.html) are similar to libraries, but serve to enforce structure for your codebase.
 
 
-Other frameworks include Rails, Express / Node.js, Django, PHP, etc.
+Other frameworks include Rails, Express, Django, Drupal, etc.
 
 Let's check out some examples of [Sinatra in the wild.](http://www.sinatrarb.com/wild.html)
 
@@ -260,8 +258,9 @@ Try creating a new route that doubles a number. When I go to:
 * `/double/8`
   * I should see: `16`
 
-**Hint** you may need to convert a value from params to an integer using `to_i` for
-multiplication to work.
+**Hint** you will need to convert a value from params to an integer using `to_i` for
+multiplication to work **and** then convert the result back to a string `to_s` before returning it
+> If you return an integer, Sinatra will interpret it as you returning a status code. For example, if you return `404`, you will see a `404` error message in the console.
 
 ### Multiple Params
 
@@ -299,12 +298,9 @@ You can't really 'see' the verb. It's usually GET, but not always. It could be:
 * PUT - for 'updating' existing data on the server (usually by submitting a form)
 * DELETE - for 'deleting' data on the server
 
-The *path* is what you see in the address bar (i.e. everthing in URL after the
-  first `/`).
+The *path* is what you see in the address bar (i.e. everything in URL after the first `/`).
 
-The combination of a VERB + PATH make a *ROUTE*. These little blocks we've been
-writing in Sinatra are *routes*. Think of them as `features` or
-`things a web app can do`.
+The combination of a VERB + PATH make a *ROUTE*. These little blocks we've been writing in Sinatra are *routes*. Think of them as "features" or "things a web app can do".
 
 ## Exercise: 99 Bottles of Beer (20 minutes)
 
