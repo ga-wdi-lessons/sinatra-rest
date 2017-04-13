@@ -21,6 +21,7 @@ Our entire application looks like:
 
 ```ruby
 require 'sinatra'
+
 get '/' do
   erb :index
 end
@@ -47,7 +48,7 @@ get "/" do
   erb :index
 end
 
-get "/bottles/:num" do
+get "/bottles/:num_bottles" do
   @num_bottles = params[:num].to_i
   erb :index
 end
@@ -58,17 +59,17 @@ with `@`.
 
 ```html
 <!-- /views/index.erb -->
-<% if @num_bottles == 0%>
-  No bottles of beer on the wall.
+<% if @num_bottles == 0 %>
+  <h1>No bottles of beer on the wall.</h1>
   <a href='/'>Start Over</a>
 <% else %>
-  <%= @num_bottles %> bottles of beer on the wall.
+  <h1><%= @num_bottles %> bottles of beer on the wall.</h1>
   <a href='/bottles/<%= @num_bottles - 1 %>'>Take one down.</a>
 <% end %>
 ```
 
 
-We can write erb tags in two ways. `<% %>` or `<%= %>`. Without the equal sign,
+We can write `erb` tags in two ways. `<% %>` or `<%= %>`. Without the equal sign,
 the view (`.erb` file) will **execute the code only.** With an equal sign, the view
 will execute the code and also render a string in the browser that is the return value of the
 code that was executed.
@@ -76,7 +77,7 @@ code that was executed.
 To see this in action let's update our `app.rb`:
 
 ```ruby
-get '/' do
+get '/bob' do
   @bob = "bobert"
   erb :index
 end
@@ -155,17 +156,18 @@ global layout view. This will be loaded "around" every other view.
 </html>
 ```
 
-## You do: Pair Programming Bot (20 minutes)
+<!-- ## You do: Pair Programming Bot (20 minutes)
 
-https://github.com/ga-dc/pair_programming_bot
+https://github.com/ga-dc/pair_programming_bot -->
 
 ## You do: Emergency Complement (20 minutes)
 
 https://github.com/ga-dc/emergency_compliment
 
+## Closing (10 minutes)
 
-<!-- ## We do: Forms
 
+## Bonus: Forms
 
 Any input with a `name` attribute will show up as an element of `params`
 
@@ -178,6 +180,14 @@ Forms with a GET action are useful for search forms.
 </form>
 ```
 
+which could be handled by a controller action defined in `app.rb`:
+
+```rb
+get '/names' do
+  @student = names.find {|name| name == params[:student_name].downcase}
+  erb :student
+end
+```
 > Keep an eye out on the URL when you submit this last form, you'll notice that
 the url changes to whatever the action is as well as contains all of the
 parameter values from the input tags.
@@ -186,4 +196,6 @@ parameter values from the input tags.
 but a limitation on HTML. We will see tomorrow during the lab theres a way to
 kind of hack around these HTML limitations.
 
-**Question**: What's the benefit of using GET requests with search forms? -->
+> Note: We will be looking at forms in more detail in the next lecture
+
+**Question**: What's the benefit of using GET requests with search forms?
