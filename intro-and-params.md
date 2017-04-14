@@ -141,7 +141,7 @@ use `localhost:4567`, unless someone changes it.
 
 ## Routes
 
-The `/` in `get '/'` is the *route* to which someone needs to go to make this
+The `/` (path) in `get '/'` (route) is the url someone needs to go to make this
 bit of Ruby code run. We can have more than one route in our app!
 
 Try going to `localhost:4567/oh_hello` in your browser. What do we see?
@@ -194,10 +194,10 @@ require 'sinatra/reloader'
 
 Check out the [Sinatra Games](https://github.com/ga-wdi-exercises/sinatra_games) repo.
 
-Note: You can use your current Sinatra app you've been working in... No need to
+> Note: You can use your current Sinatra app you've been working in... No need to
 create a new one.
 
-**Hint** Look up the `Array#sample` method for ones that involve randomness.
+> Hint: Look up the `Array#sample` method for ones that involve randomness.
 
 Some of them are going to be hard / you don't know enough yet... that's ok... see what you can figure out!
 
