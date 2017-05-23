@@ -12,17 +12,23 @@ your browser always sends that request in a particular *way* that gives the
 server a hint as to the "point" of the request. This "particular way" is the
 **method**.
 
-### For example
+### Let's play a REST game
 
-You could consider me speaking to the class to be an HTTP request. I'm the
-browser. You all are the server. The path is the classroom(who/what i'm saying
-it to). The method is how I'm talking(what kind of things/actions i want).
+For the next few minutes, I'm going to play the role of a client/browser and you all collectively will play the part of the server. Students will be resources on this server. Each table will have a number (I'll go down the aisle writing those numbers) and each seat at the table will have a position numbered from 1 at the aisle and up towards the walls. Remember your seat number.
 
-If my method is "talking in a normal voice", you can infer that the point of my
-request is for you all to just absorb some information.
+Now I'm going to write my requests method and route on the board. Pay attention for your resource path and be ready to `respond` appropriately to my `request`!
 
-If my method is "YELLING IN A LOUD VOICE", you can infer that the point of my
-request is for you all to start behaving yourselves right this second.
+<details>
+ <summary>More Examples</summary>
+
+ path: /table/3/student/1/name and method: GET (student should say their name)
+
+ path: /table/2/student/3/name and method: PUT "I'm putting 'Fred'" (hand student a marker to change their name)
+
+ path: /table/2/student/3/name and method: GET (same student should respond with the new name)
+
+ path: /table/5/student/2 and method: DELETE (motion for the student to leave the class, just kidding!)
+</details>
 
 ### REST
 
